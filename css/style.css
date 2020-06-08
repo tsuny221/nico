@@ -7,10 +7,13 @@
 
 body {
 	color: #333;
-    font-family:YuGothic, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "メイリオ", Meiryo, Verdana, 'M PLUS 1p', sans-serif;
+    font-family: "YuGothic", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "メイリオ", Meiryo, Verdana, 'M PLUS 1p', sans-serif;
     font-size: 14px;
     font-weight: 200;
     line-height: 2;
+}
+li {
+	list-style: none;
 }
 
 a {
@@ -21,11 +24,17 @@ a {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+.clearfix::after {
+   content: "";
+   display: block;
+   clear: both;
+}
 /*----------テキスト
 ------------------------------------*/
 h2 {
 	letter-spacing: 2px;
 }
+
 .txtl {
 	font-size: 28px;
 	padding: 10px 0px;
@@ -42,7 +51,7 @@ h2 {
 	font-size: 12px;
 }
 .bold {
-	font-weight: 400px;
+	font-weight: bold;
 }
 .center {
 	text-align: center;
@@ -50,6 +59,18 @@ h2 {
 .txtwide {
 	max-width: 800px;
 	width: 70%;
+}
+.brown_txt {
+	color: #bf9e81;
+}
+.brown_bg{
+	background-color: #dccbb9;
+}
+.white_txt {
+	color: #fff;
+}
+.yellow_txt {
+	color: #d59b00;
 }
 /*----------ヘッダー
 ------------------------------------*/
@@ -143,6 +164,100 @@ h2 {
 	background-size: cover;
 	background-position: center;
 }
+/*----------商品情報
+------------------------------------*/
+.item-info {
+	padding: 5% 0px;
+}
+.item-info_box1,
+.item-info_box2 {
+	display: flex;
+	justify-content: space-around;
+	margin: 5% 0px;
+}
+.box_txt {
+	flex-basis: 500px;
+	padding: 5%;
+}
+.item-info_img {
+	width: 100%;
+	border-radius: 50px;
+	border: solid 2px #fff;
+}
+.item_name {
+	font-size: 20px;
+}
+.item-info i {
+	font-size: 15px;
+}
+.item-info_detail {
+	margin: 50px 0px;
+}
+.detail_link {
+	border-bottom: 2px dashed #fff;
+	color: #fff;
+	font-size: 18px;
+}
+.detail_link:hover {
+	color: #bf9e81;
+	border-bottom: 2px dashed #bf9e81;
+}
+/*----------出店情報
+------------------------------------*/
+.shop-info {
+	padding: 5% 0px;
+}
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
+.ven_img {
+	flex-basis: 400px;
+}
+.ven_map {
+	width: 100%;
+}
+.shop-info_list {
+	font-size: 20px;
+	margin: 10px 0px;
+}
+.border {
+	content: "";
+	border-bottom: 2px dashed #bf9e81;
+	padding: 10px 0px;
+}
+
+.shop-info_news dl {
+    margin: 0 0 15px;
+    padding: 0 10px 10px;
+}
+.shop-info_news dl dt {
+    float: left; /*フロートをdtにのみつける*/
+    width: 11em;
+    padding: 10px 0;
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+}
+.shop-info_news dl dd {
+    margin: 0;
+    padding: 10px 10px 10px 11em;
+    line-height: 150%;
+    border-bottom: 1px #bf9e81 dashed;
+}
+.info_img {
+	margin: 10px;
+}
+
+/*----------フッター
+------------------------------------*/
+.footer {
+	padding: 2%;
+}
+.copyright {
+	margin: 20px 0px;
+}
+
 
 /*----------スマホ版
 ------------------------------------*/
@@ -153,7 +268,7 @@ h2 {
 	width: 95%;
 }
 .txtl {
-	font-size: 24px;
+	font-size: 26px;
 	padding: 10px 0px;
 }
 .txtm {
@@ -161,7 +276,7 @@ h2 {
 	padding: 10px 0px;
 }
 .txts {
-	font-size: 14px;
+	font-size: 12px;
 	padding: 5px 0px;
 }
 .txtxs {
@@ -180,6 +295,9 @@ h2 {
 ------------------------------------*/
 .header_nav {
 	display: none;
+}
+.logo_img {
+	width: 100px;
 }
 
 #nav-drawer {
@@ -261,16 +379,17 @@ h2 {
 	width: 30%;
 	margin-bottom: 10%; 
 }
-/*----------コンセプト
-------------------------------------*/
-}
 
+}
 
 @media(max-width: 790px){
 /*----------テキスト
 ------------------------------------*/
 .warp {
 	width: 95%;
+}
+.txtxl {
+	font-size: 23px;
 }
 .txtl {
 	font-size: 20px;
@@ -301,5 +420,44 @@ h2 {
 .concept {
 	height: 100vh;
 	padding-top: 8%;
+}
+/*---------商品情報
+------------------------------------*/
+
+.item-info_box1{
+	flex-direction: column-reverse;
+}
+.item-info_box2 {
+	flex-direction: column;
+}
+.box_txt {
+	flex-basis: 200px;
+}
+.item_name {
+	font-size: 18px;
+}
+
+.shop-info_news dl dt {
+    float: none;
+    width: 100%;
+}
+.shop-info_news dl dt {
+    float: left;
+    width: 11em;
+    padding: 10px 0;
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+}
+
+.flex {
+	flex-direction: column;
+}
+.ven_img {
+	flex-basis: 200px;
+}
+.ven_map {
+	width: 100%;
+}
 }
 
